@@ -736,6 +736,9 @@ function saveMgr(){ST.bname=document.getElementById('m-bn').value||'Bolão Copa 
 
 // ═══ START ═══
 initApp();
+
+window.addEventListener('beforeunload',()=>{try{localStorage.setItem(SK,JSON.stringify(ST));}catch(e){}});
+setInterval(()=>{try{localStorage.setItem(SK,JSON.stringify(ST));}catch(e){}},30000);
 </script>
 </body>
 </html>
